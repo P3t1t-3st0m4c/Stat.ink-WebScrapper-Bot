@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '10' }).setToken(token);
 
-module.exports.reloadCommands = (async () => {
+module.exports.reloadCommands = async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
@@ -27,5 +27,5 @@ module.exports.reloadCommands = (async () => {
 	} catch (error) {
 		console.error(error);
 	}
-})();
+};
 
