@@ -15,6 +15,6 @@ module.exports.subcommand = subcommand
 module.exports.execute = async (interaction) => {
     const user = interaction.options.getString("user");
     await interaction.reply({ content : `Searching for ${user}... (it may take a moment)` });
-    const data = await retrieveStandardData(user)
+    const data = await retrieveStandardData(user, interaction.locale)
     await dataEmbedBuilder(data, interaction)
 }

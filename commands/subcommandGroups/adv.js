@@ -42,6 +42,6 @@ module.exports.subcommandGroup = subcommandGroup
 module.exports.execute = async (interaction) => {
     const user = interaction.options.getString("user");
     await interaction.reply({ content : `Searching for ${user}... (it may take a moment)` });
-    const data = await choices[interaction.options.getSubcommand()](user)
+    const data = await choices[interaction.options.getSubcommand()](user, interaction.locale)
     await dataEmbedBuilder(data, interaction)
 }
