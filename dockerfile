@@ -5,4 +5,4 @@ WORKDIR /app
 COPY . /app
 
 RUN npm install
-CMD ls -l /app
+CMD node main.js
