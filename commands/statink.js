@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { locals } = require('../../config.json');
+const { locals } = require('../config.json');
 const fs = require('node:fs');
 const path = require('node:path');
 
