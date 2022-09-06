@@ -1,0 +1,65 @@
+{
+    "localizations" : {
+        "en-US": "en-US",
+        "en-GB": "en-GB",
+        "fr": "fr-FR",
+        "es": "es-ES",
+        "it": "it-IT",
+        "ja": "ja-JP",
+        "de": "de-DE",
+        "ru": "ru-RU"
+    },
+    "strings" : {
+        "fr" : {
+            "NameRegexError" : "{} ne correspond pas au modèle regex.",
+            "User404Error" : "L'utilisateur {} n'existe pas.",
+            "NoDataError" : "Aucune donnée n'a été trouvée.",
+            "RetrieveError" : "Données non disponibles.",
+            "advDesc" : "Infos avancées d'un joueur.",
+            "advSplt1Desc" : "Infos avancées d'un joueur pour splatoon 1.",
+            "advSplt2Desc" : "Infos avancées d'un joueur pour splatoon 2.",
+            "advSalmonDesc" : "Infos avancées d'un joueur pour le salmon run de splatoon 2.",
+            "advUserDesc" : "Le pseudo du joueur à rechercher.",
+            "advUserOption" : "pseudo",
+            "stdDesc": "Infos standard d'un joueur.",
+            "stdUserOption": "pseudo",
+            "stdUserOptionDesc" : "Le pseudo du joueur à rechercher.",
+            "langDesc": "Force une langue pour les reponses.",
+            "langOptionDesc": "La langue à choisir."
+        },
+        "en-US" : {
+            "NameRegexError" : "{} don't match the regex pattern.",
+            "User404Error" : "User {} not found.",
+            "NoDataError" : "No data found.",
+            "RetrieveError" : "No data Available.",
+            "advDesc" : "Display advanced info of a player.",
+            "advSplt1Desc" : "Display advanced info of a player for splatoon 1.",
+            "advSplt2Desc" : "Display advanced info of a player for splatoon 2.",
+            "advSalmonDesc" : "Display advanced info of a player for splatoon 2 salmon run.",
+            "advUserDesc" : "The username of the user to search.",
+            "advUserOption" : "user",
+            "stdDesc": "Display standard info of a player.",
+            "stdUserOption": "user",
+            "stdUserOptionDesc" : "The username of the user to search.",
+            "langDesc": "Forces a language for the replies.",
+            "langOptionDesc": "The language to choose."
+        },
+        "en-GB" : {
+            "NameRegexError" : "{} don't match the regex pattern.",
+            "User404Error" : "User {} not found.",
+            "NoDataError" : "No data found.",
+            "RetrieveError" : "No data Available.",
+            "advDesc" : "Display advanced info of a player.",
+            "advSplt1Desc" : "Display advanced info of a player for splatoon 1.",
+            "advSplt2Desc" : "Display advanced info of a player for splatoon 2.",
+            "advSalmonDesc" : "Display advanced info of a player for splatoon 2 salmon run.",
+            "advUserDesc" : "The username of the user to search.",
+            "advUserOption" : "user",
+            "stdDesc": "Display standard info of a player.",
+            "stdUserOption": "user",
+            "stdUserOptionDesc" : "The username of the user to search.",
+            "langDesc": "Forces a language for the replies.",
+            "langOptionDesc": "The language to choose."
+        }
+    }
+}
