@@ -1,7 +1,7 @@
 const { SlashCommandSubcommandBuilder, SlashCommandStringOption } = require('discord.js');
-const { localizations } = require('../../lib/consts.json');
+const { localizations, strings } = require('../../lib/consts.json');
 const { locale } = require("../../config.json")
-const { strings } = require("../../lib/consts.json")
+const { format, checkLocale } = require("../../lib/helpers")
 
 const stringOption = new SlashCommandStringOption()
     .setName('lang')
@@ -28,6 +28,7 @@ module.exports.name = subcommand.name;
 module.exports.subcommand = subcommand
 module.exports.execute = async (interaction) => {
     // Check role and get the db running to save the data for the guildId
-    await interaction.reply({ content : ":stop_sign: This command is still in development. :stop_sign:", ephemeral : true})
+    const string = strings[checkLocale(interaction, locale, strings)].commandStillInDev
+    await interaction.reply({ content : string, ephemeral : true})
     console.log(locale[interaction.guildId], interaction.options.getString("lang"))
 }

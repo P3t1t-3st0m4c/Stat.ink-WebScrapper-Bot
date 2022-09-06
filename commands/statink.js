@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { locals } = require('../config.json');
+const { strings } = require("../lib/consts.json")
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -7,6 +8,10 @@ const path = require('node:path');
 let statink = new SlashCommandBuilder()
     .setName("statink")
     .setDescription("Slash commands for the statink bot.")
+
+for (const [locale,string] of Object.entries(strings)) {
+    statink.setDescriptionLocalization(locale, string.statinkDesc)
+}
 
 let subcommands = {};
 const subcommandFiles = fs.readdirSync(path.join(__dirname, './subcommands/')).filter(file => file.endsWith('.js'));

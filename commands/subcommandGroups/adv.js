@@ -1,5 +1,7 @@
 const { advancedDataSplat1, advancedDataSplat2, advancedDataSalmon } = require("../../lib/scrapper");
 const { dataEmbedBuilder } = require("../../lib/builders")
+const { format, checkLocale } = require("../../lib/helpers")
+const { locale } = require("../../config.json")
 const { SlashCommandSubcommandGroupBuilder } = require('discord.js');
 const { strings } = require("../../lib/consts.json")
 const fs = require('node:fs');
@@ -30,8 +32,17 @@ for (const [locale,string] of Object.entries(strings)) {
 module.exports.name = subcommandGroup.name
 module.exports.subcommandGroup = subcommandGroup
 module.exports.execute = async (interaction) => {
+    // Check if the locale is forced by the server
+    // For the time being use config.json instead of a db
+    // locale === db
     const user = interaction.options.getString("user");
-    await interaction.reply({ content : `Searching for ${user}... (it may take a moment)` });
-    const data = await choices[interaction.options.getSubcommand()](user, interaction.locale)
+    const string = format(
+        strings[checkLocale(interaction, locale, strings)].searchUser, 
+        { user : user }
+    )
+    await interaction.reply({ content : string });
+
+    const localization = locale[interaction.guildId] != "none" ? locale[interaction.guildId] : interaction.locale
+    const data = await choices[interaction.options.getSubcommand()](user, localization, checkLocale(interaction, locale, strings))
     await dataEmbedBuilder(data, interaction)
 }

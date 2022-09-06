@@ -3,7 +3,8 @@
         "en-US": "en-US",
         "en-GB": "en-GB",
         "fr": "fr-FR",
-        "es": "es-ES",
+        "es-ES": "es-ES",
+        "es-US": "es-MX",
         "it": "it-IT",
         "ja": "ja-JP",
         "de": "de-DE",
@@ -11,8 +12,8 @@
     },
     "strings" : {
         "fr" : {
-            "NameRegexError" : "{} ne correspond pas au modèle regex.",
-            "User404Error" : "L'utilisateur {} n'existe pas.",
+            "NameRegexError" : "${name} ne correspond pas au modèle regex.",
+            "User404Error" : "L'utilisateur ${name} n'existe pas.",
             "NoDataError" : "Aucune donnée n'a été trouvée.",
             "RetrieveError" : "Données non disponibles.",
             "advDesc" : "Infos avancées d'un joueur.",
@@ -25,11 +26,14 @@
             "stdUserOption": "pseudo",
             "stdUserOptionDesc" : "Le pseudo du joueur à rechercher.",
             "langDesc": "Force une langue pour les reponses.",
-            "langOptionDesc": "La langue à choisir."
+            "langOptionDesc": "La langue à choisir.",
+            "statinkDesc": "Commandes pour le bot stat.ink.",
+            "commandStillInDev" : ":stop_sign: Cette commande est toujours en developpement. :stop_sign:",
+            "searchUser" : "Recherche de ${user}... (cela peut prendre un moment)."
         },
         "en-US" : {
-            "NameRegexError" : "{} don't match the regex pattern.",
-            "User404Error" : "User {} not found.",
+            "NameRegexError" : "${name} don't match the regex pattern.",
+            "User404Error" : "User ${name} not found.",
             "NoDataError" : "No data found.",
             "RetrieveError" : "No data Available.",
             "advDesc" : "Display advanced info of a player.",
@@ -42,11 +46,14 @@
             "stdUserOption": "user",
             "stdUserOptionDesc" : "The username of the user to search.",
             "langDesc": "Forces a language for the replies.",
-            "langOptionDesc": "The language to choose."
+            "langOptionDesc": "The language to choose.",
+            "statinkDesc": "Slash commands for the stat.ink bot.",
+            "commandStillInDev" : ":stop_sign: This command is still in development. :stop_sign:",
+            "searchUser" : "Searching for ${user}... (it may take a moment)"
         },
         "en-GB" : {
-            "NameRegexError" : "{} don't match the regex pattern.",
-            "User404Error" : "User {} not found.",
+            "NameRegexError" : "${name} don't match the regex pattern.",
+            "User404Error" : "User ${name} not found.",
             "NoDataError" : "No data found.",
             "RetrieveError" : "No data Available.",
             "advDesc" : "Display advanced info of a player.",
@@ -59,7 +66,10 @@
             "stdUserOption": "user",
             "stdUserOptionDesc" : "The username of the user to search.",
             "langDesc": "Forces a language for the replies.",
-            "langOptionDesc": "The language to choose."
+            "langOptionDesc": "The language to choose.",
+            "statinkDesc": "Slash commands for the stat.ink bot.",
+            "commandStillInDev" : ":stop_sign: This command is still in development. :stop_sign:",
+            "searchUser" : "Searching for ${user}... (it may take a moment)"
         }
     }
 }

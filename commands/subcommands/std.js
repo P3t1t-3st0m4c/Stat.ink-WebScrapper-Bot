@@ -1,5 +1,6 @@
 const { retrieveStandardData } = require("../../lib/scrapper");
 const { dataEmbedBuilder } = require("../../lib/builders")
+const { format, checkLocale } = require("../../lib/helpers")
 const { locale } = require("../../config.json")
 const { strings } = require("../../lib/consts.json")
 const { SlashCommandSubcommandBuilder, SlashCommandStringOption } = require('discord.js');
@@ -27,9 +28,15 @@ module.exports.subcommand = subcommand
 module.exports.execute = async (interaction) => {
     // Check if the locale is forced by the server
     // For the time being use config.json instead of a db
-    const localizations = interaction.guildId in locale ? locale[interaction.guildId] : interaction.locale
+    // locale === db
     const user = interaction.options.getString("user");
-    await interaction.reply({ content : `Searching for ${user}... (it may take a moment)` });
-    const data = await retrieveStandardData(user, localizations)
+    const string = format(
+        strings[checkLocale(interaction, locale, strings)].searchUser, 
+        { user : user }
+    )
+    await interaction.reply({ content : string });
+
+    let localization = locale[interaction.guildId] != "none" ? locale[interaction.guildId] : interaction.locale
+    const data = await retrieveStandardData(user, localization, checkLocale(interaction, locale, strings))
     await dataEmbedBuilder(data, interaction)
 }
